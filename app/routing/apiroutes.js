@@ -7,12 +7,12 @@ module.exports = function(app) {
   });
 
   app.post("/api/friends", function(req, res) {
-    console.log(req.body.scores);
 
-    var user = req.body;
 
-    for(var i = 0; i < user.scores.length; i++) {
-      user.scores[i] = parseInt(user.scores[i]);
+    var userInput = req.body;
+
+    for(var i = 0; i < userInput.scores.length; i++) {
+      userInput.scores[i] = parseInt(userInput.scores[i]);
     }
 
     var bestFriendIndex = 0;
@@ -21,18 +21,19 @@ module.exports = function(app) {
     for(var i = 0; i < friends.length; i++) {
       var totalDifference = 0;
       for(var j = 0; j < friends[i].scores.length; j++) {
-        var difference = Math.abs(user.scores[j] - friends[i].scores[j]);
+        var difference = Math.abs(userInput.scores[j] - friends[i].scores[j]);
         totalDifference += difference;
       }
 
       if(totalDifference < minDifference) {
         bestFriendIndex = i;
+        
         minDifference = totalDifference;
 
       }
     }
 
-    friends.push(user);
+    friends.push(userInput);
     res.json(friends[bestFriendIndex]);
   });
 };  

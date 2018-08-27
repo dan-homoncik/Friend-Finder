@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Silicon Valley Friend Finder</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header>
+		<nav>
+            <!-- these routes don't seem to work -->
+			<div class="nav-wrapper red darken-2">
+				<a href="/">
+					Home
+				</a>
+				<ul class="right hide-on-med-and-down">
+					<li>
+						<a href="/survey">Survey</a>
+					</li>
+					<li>
+						<a href="/api/friends">API Friends List</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col s12 contentpane">
+				
+					<img class="responsive-img" id="main-image" src="silicon-valley.png">
+
+			
+			</div>
+			<div style="text-align:center">
+				<a href="/survey">
+					<button class="btn-floating btn-large waves-effect waves-light red pulse" type="submit" name="action" >
+						<i class="material-icons right">send</i>
+					</button>
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
